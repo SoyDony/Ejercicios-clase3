@@ -5,111 +5,7 @@ namespace Ejercicios_clase3
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
-
-            Console.WriteLine("\n\n----- CREANDO INSTACIAS Y USANDO ALGUNOS METODOS DE PRUEBA ------");
-
-
-            Console.WriteLine("\n----- VEHICULO ------");
-            
-            Vehiculo focus = new Vehiculo();
-            focus.arrancar();
-            focus.encenderLuces();
-            focus.apagar();
-
-            Console.WriteLine("\n----- AUTOBUS ------");
-
-            Autobus colegial = new Autobus();
-            colegial.cargarPasajero();
-            colegial.descargarPasajero();
-
-            Console.WriteLine("\n----- VEHICULOO (ejercicio 2, con doble O para usarlo en el mismo codigo) -----");
-
-            Console.WriteLine("\n----- TAXI ------");
-
-            Taxi taxi = new Taxi();
-            taxi.arrancar();
-            taxi.acelerar();
-            taxi.frenar();
-            taxi.libre();
-
-            Console.WriteLine("\n----- MOTO ------");
-            
-            Moto ninja = new Moto();
-            ninja.hacerWheelie();
-            ninja.tirarCortes();
-
-            Console.WriteLine("\n----- ANIMALES -----");
-
-            Console.WriteLine("\n----- OSO ------");
-
-            Oso yogi = new Oso();
-            yogi.alimentar();
-            yogi.reproducir();
-            yogi.hibernar();
-            yogi.teminarHibernacion();
-
-            Console.WriteLine("\n----- TIBURON ------");
-
-            Tiburón tiburonPelicula = new Tiburón();
-            tiburonPelicula.hacerSonidoCaracteristico();
-            tiburonPelicula.atacar();
-            tiburonPelicula.sumergirse();
-            tiburonPelicula.detectarSangre();
-
-            Console.WriteLine("\n------ BIBLIOTECA ----");
-            
-            Biblioteca biblioteca = new Biblioteca();
-
-            Console.WriteLine("\n----- CREANDO LIBROS PARA LA BIBLIOTECA ------");
-            
-            Libro libro1 = new Libro { titulo = "Rayuela", autor = "Julio Cortazar", año = 1963, genero = "Novela" };
-            Libro libro2 = new Libro { titulo = "El Aleph", autor = "Jorge Luis Borges", año = 1949, genero = "Cuento fantástico" };
-            Libro libro3 = new Libro { titulo = "Don Segundo Sombra", autor = "Ricardo Güiraldes", año = 1926, genero = "Novela gauchesca" };
-            
-            biblioteca.agregarLibro(libro1);
-            biblioteca.agregarLibro(libro2);
-            biblioteca.agregarLibro(libro3);
-
-            Console.WriteLine("\n----- BUSCANDO LIBROS POR AUTOR ------");
-            
-            var encontrados = biblioteca.buscarPorAutor("Julio Cortazar");
-            Console.WriteLine("Libros encontrados de Cortazar:");
-            foreach (var titulo in encontrados)
-            {
-                Console.WriteLine("... " + titulo);
-            }
-
-            biblioteca.prestarLibro("Rayuela");
-            biblioteca.devolverLibro("Rayuela");
-
-            Console.WriteLine("\n----- CAJERO -----");
-            
-            CajeroAutomatico cajero = new CajeroAutomatico();
-            cajero.consultarSaldo();
-            cajero.retirarDinero(500);
-            cajero.depositarDinero(1000);
-
-            Console.WriteLine("\n----- DEPARTAMENTO -----");
-            Departamento Ingeniería = new Departamento();
-            Ingeniería.agregarEmpleado(1);
-            Ingeniería.quitarEmpleado(1);
-            Ingeniería.presupuestoRestante();
-
-            Empleado Carloncho = new Empleado();
-            Carloncho.asignarRol(1);
-            Carloncho.asignarRango(2);
-            Carloncho.darDeBaja(); // ACA CAMBIÉ A VOID EL METODO, PEDÍA UN DATO INT (EN MI DIAGRAMA Y NO TIENE SENTIDO)
-
-            Rol asistente = new Rol();
-            asistente.otorgarPermisos(2);
-            asistente.quitandoPermisos(2);
-
-        }
-    }
-
-
+       
     //EJERCICIO 1
 
     public class Vehiculo
@@ -322,7 +218,7 @@ namespace Ejercicios_clase3
     }
 
 
-    //EJERCICIO 5  (ESTE EJERCICIO ESTUVE MIRANDO COMO HACERLO PORQUE NO LA TENIA CLARA)
+    //EJERCICIO 5  
 
 
     public class Biblioteca
@@ -351,7 +247,7 @@ namespace Ejercicios_clase3
 
         public List<string> buscarPorAutor(string autor)
         {
-            List<string> resultado = new List<string>(); // hago una lista para autores para poder cumplir con el tipo de dato que puse en el diagrama. me enterré solo.
+            List<string> resultado = new List<string>(); // hago una lista para autores para poder cumplir con el tipo de dato que puse en el diagrama.
 
             foreach (var libro in libros)
             {
@@ -433,7 +329,7 @@ namespace Ejercicios_clase3
             public double presupuestoRestante()
             {
                 Console.WriteLine("este es el presupuesto restante: ");
-                return 0.0; //simulo un valor para no romperlo
+                return 0.0; //simulo un valor para no romperlo pero le falta la logica.
             }
         }
 
@@ -478,6 +374,113 @@ namespace Ejercicios_clase3
                 Console.WriteLine("quitando permisos al nivel indicado");
             }
         }
+
+
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("\n\n----- CREANDO INSTACIAS Y USANDO ALGUNOS METODOS DE PRUEBA ------");
+
+
+            Console.WriteLine("\n----- VEHICULO ------");
+
+            Vehiculo focus = new Vehiculo();
+            focus.arrancar();
+            focus.encenderLuces();
+            focus.apagar();
+
+            Console.WriteLine("\n----- AUTOBUS ------");
+
+            Autobus colegial = new Autobus();
+            colegial.cargarPasajero();
+            colegial.descargarPasajero();
+
+            Console.WriteLine("\n----- VEHICULOO (ejercicio 2, con doble O para usarlo en el mismo codigo) -----");
+
+            Console.WriteLine("\n----- TAXI ------");
+
+            Taxi taxi = new Taxi();
+            taxi.arrancar();
+            taxi.acelerar();
+            taxi.frenar();
+            taxi.libre();
+
+            Console.WriteLine("\n----- MOTO ------");
+
+            Moto ninja = new Moto();
+            ninja.hacerWheelie();
+            ninja.tirarCortes();
+
+            Console.WriteLine("\n----- ANIMALES -----");
+
+            Console.WriteLine("\n----- OSO ------");
+
+            Oso yogi = new Oso();
+            yogi.alimentar();
+            yogi.reproducir();
+            yogi.hibernar();
+            yogi.teminarHibernacion();
+
+            Console.WriteLine("\n----- TIBURON ------");
+
+            Tiburón tiburonPelicula = new Tiburón();
+            tiburonPelicula.hacerSonidoCaracteristico();
+            tiburonPelicula.atacar();
+            tiburonPelicula.sumergirse();
+            tiburonPelicula.detectarSangre();
+
+            Console.WriteLine("\n------ BIBLIOTECA ----");
+
+            Biblioteca biblioteca = new Biblioteca();
+
+            Console.WriteLine("\n----- CREANDO LIBROS PARA LA BIBLIOTECA ------");
+
+            Libro libro1 = new Libro { titulo = "Rayuela", autor = "Julio Cortazar", año = 1963, genero = "Novela" };
+            Libro libro2 = new Libro { titulo = "El Aleph", autor = "Jorge Luis Borges", año = 1949, genero = "Cuento fantástico" };
+            Libro libro3 = new Libro { titulo = "Don Segundo Sombra", autor = "Ricardo Güiraldes", año = 1926, genero = "Novela gauchesca" };
+
+            biblioteca.agregarLibro(libro1);
+            biblioteca.agregarLibro(libro2);
+            biblioteca.agregarLibro(libro3);
+
+            Console.WriteLine("\n----- BUSCANDO LIBROS POR AUTOR ------");
+
+            var encontrados = biblioteca.buscarPorAutor("Julio Cortazar");
+            Console.WriteLine("Libros encontrados de Cortazar:");
+            foreach (var titulo in encontrados)
+            {
+                Console.WriteLine("... " + titulo);
+            }
+
+            biblioteca.prestarLibro("Rayuela");
+            biblioteca.devolverLibro("Rayuela");
+
+            Console.WriteLine("\n----- CAJERO -----");
+
+            CajeroAutomatico cajero = new CajeroAutomatico();
+            cajero.consultarSaldo();
+            cajero.retirarDinero(500);
+            cajero.depositarDinero(1000);
+
+            Console.WriteLine("\n----- DEPARTAMENTO -----");
+            Departamento Ingeniería = new Departamento();
+            Ingeniería.agregarEmpleado(1);
+            Ingeniería.quitarEmpleado(1);
+            Ingeniería.presupuestoRestante();
+
+            Empleado Carloncho = new Empleado();
+            Carloncho.asignarRol(1);
+            Carloncho.asignarRango(2);
+            Carloncho.darDeBaja(); // ACA CAMBIÉ A VOID EL METODO, PEDÍA UN DATO INT (EN MI DIAGRAMA Y NO TIENE SENTIDO)
+
+            Rol asistente = new Rol();
+            asistente.otorgarPermisos(2);
+            asistente.quitandoPermisos(2);
+
+        }
+    }
+
+
 
 }
 
