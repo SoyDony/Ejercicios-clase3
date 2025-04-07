@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 
 namespace Ejercicios_clase3
 {
@@ -103,9 +104,19 @@ namespace Ejercicios_clase3
         private int numeroDeRegistro;
         private string municipio;
 
-        public void libre()
+        public bool libre()
         {
-            Console.WriteLine("Estoy Libre");
+                bool habilitado = true;
+
+                if (habilitado == true) {
+
+                    Console.WriteLine("estoy libre!");
+                    return true;
+                    }
+                else
+                {
+                    return false;
+                }
         }
     }
 
